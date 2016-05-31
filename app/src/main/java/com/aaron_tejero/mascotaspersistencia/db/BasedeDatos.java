@@ -95,9 +95,11 @@ public class BasedeDatos extends SQLiteOpenHelper {
         String query="SELECT * FROM "+ConstantesBD.TABLE_LIKE;
         SQLiteDatabase db=this.getReadableDatabase();
         Cursor registros=db.rawQuery(query,null);
+        if (registros.moveToNext()){
+            registros.moveToLast();
+            ids[0]=registros.getInt(1);
+        }
 
-        registros.moveToLast();
-        ids[0]=registros.getInt(1);
         int i=1;
         while(registros.moveToPrevious()&&i<5){
             int idaux=registros.getInt(1);

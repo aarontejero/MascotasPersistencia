@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="aaron_tejero.mascotasrecyclerview.AcercaDe">
+
+    <include android:id="@+id/miActionBar"
+        layout="@layout/actionbar">
+    </include>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desarrollador"
+        android:id="@+id/textView"
+        android:paddingTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/miActionBar"
+        android:textSize="24sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aaron Tejero Loria"
+        android:id="@+id/textView2"
+        android:paddingTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textView"
+        android:textSize="24sp"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="aaron.tejero@gmail.com"
+        android:id="@+id/textView3"
+        android:paddingTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textView2"
+        android:textSize="24sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Twitter: @aaron_tejero"
+        android:id="@+id/textView4"
+        android:paddingTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textView3"
+        android:textSize="24sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="facebook.com/aaron.tejero"
+        android:id="@+id/textView5"
+        android:paddingTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textView4"
+        android:textSize="24sp"
+        />
+</RelativeLayout>

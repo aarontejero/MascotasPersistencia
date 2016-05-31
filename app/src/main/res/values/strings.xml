@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name"></string>
+    <string name="nombre">Nombre</string>
+    <string name="Correo">E-mail</string>
+    <string name="Mensaje">Mensaje</string>
+    <string name="enviar">Enviar mensaje</string>
+</resources>

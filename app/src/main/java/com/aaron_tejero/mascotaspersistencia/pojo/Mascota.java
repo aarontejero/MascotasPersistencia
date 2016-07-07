@@ -6,36 +6,47 @@ package com.aaron_tejero.mascotaspersistencia.pojo;
 public class Mascota {
 
 
-    int id;
-    int foto;
-    String nombre;
+    String id;
+    String nombreCompleto;
+    String urlFoto;
     int raiting;
+
     private boolean like;
 
-    public Mascota(int foto, String nombre, int raiting){
-        this.foto=foto;
-        this.nombre=nombre;
-        this.raiting=raiting;
-        this.like=false;
+    public Mascota(String urlFoto, String nombreCompleto, int raiting) {
+        this.urlFoto = urlFoto;
+        this.nombreCompleto = nombreCompleto;
+        this.raiting = raiting;
+        this.like = false;
 
     }
+
     public Mascota() {
 
     }
-    public int getId() {
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getFoto() {
-        return foto;
+    public String getNombreCompleto() {
+        return nombreCompleto;
     }
 
-    public void setFoto(int foto) {
-        this.foto = foto;
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
+    }
+
+    public String getUrlFoto() {
+        return urlFoto;
+    }
+
+    public void setUrlFoto(String urlFoto) {
+        this.urlFoto = urlFoto;
     }
 
     public int getRaiting() {
@@ -44,14 +55,6 @@ public class Mascota {
 
     public void setRaiting(int raiting) {
         this.raiting = raiting;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public boolean isLike() {

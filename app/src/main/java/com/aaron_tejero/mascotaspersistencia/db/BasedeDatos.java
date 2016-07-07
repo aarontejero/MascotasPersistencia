@@ -51,12 +51,12 @@ public class BasedeDatos extends SQLiteOpenHelper {
         SQLiteDatabase db=this.getWritableDatabase();
         Cursor registros=db.rawQuery(query,null);
         while(registros.moveToNext()){
-            Mascota mascotaActual = new Mascota();
+         /*   Mascota mascotaActual = new Mascota();
             mascotaActual.setId(registros.getInt(0));
             mascotaActual.setNombre(registros.getString(1));
             mascotaActual.setRaiting(registros.getInt(2));
             mascotaActual.setFoto(registros.getInt(3));
-            mascotas.add(mascotaActual);
+            mascotas.add(mascotaActual);*/
         }
         db.close();
         return mascotas;
@@ -102,13 +102,13 @@ public class BasedeDatos extends SQLiteOpenHelper {
 
         int i=1;
         while(registros.moveToPrevious()&&i<5){
-            int idaux=registros.getInt(1);
+           int idaux=registros.getInt(1);
             ids[i]=idaux;
             i++;
         }
 
         for (int a=0;a<5;a++) {
-            String query2="SELECT * FROM "+ConstantesBD.TABLE_MASCOTAS+ " WHERE "+ConstantesBD.TABLE_MASCOTAS_ID+"="+Integer.toString(ids[a]);
+          /*  String query2="SELECT * FROM "+ConstantesBD.TABLE_MASCOTAS+ " WHERE "+ConstantesBD.TABLE_MASCOTAS_ID+"="+Integer.toString(ids[a]);
             // db=this.getWritableDatabase();
             Cursor registros2=db.rawQuery(query2,null);
 
@@ -120,7 +120,7 @@ public class BasedeDatos extends SQLiteOpenHelper {
 
                 mascotaActual.setFoto(registros2.getInt(3));
                 mascotasfavs.add(mascotaActual);
-            }
+            }*/
         }
         db.close();
 

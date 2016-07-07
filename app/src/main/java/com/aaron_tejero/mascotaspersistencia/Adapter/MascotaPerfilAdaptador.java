@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 import com.aaron_tejero.mascotaspersistencia.pojo.Mascota;
 import com.aaron_tejero.mascotaspersistencia.R;
+import com.squareup.picasso.Picasso;
 
 /**
  * Created by AaronTejero on 22/05/2016.
@@ -50,8 +51,12 @@ public class MascotaPerfilAdaptador extends RecyclerView.Adapter<MascotaPerfilAd
 
     @Override
     public void onBindViewHolder(MascotaViewHolder viewHolder,final int i) {
-        viewHolder.foto.setImageResource(mascotas.get(i).getFoto());
+        //viewHolder.foto.setImageResource(mascotas.get(i).getUrlFoto());
         viewHolder.raiting.setText(String.valueOf(mascotas.get(i).getRaiting()));
+        Picasso.with(activity)
+                .load(mascotas.get(i).getUrlFoto())
+                .placeholder(R.drawable.perro1)
+                .into(viewHolder.foto);
 
         viewHolder.hueso.setTag(viewHolder);
         /*

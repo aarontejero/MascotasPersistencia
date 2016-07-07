@@ -90,7 +90,7 @@ public class ConstructorMascotas {
         ContentValues contentValues=new ContentValues();
         contentValues.put(ConstantesBD.TABLE_LIKE_ID_MASCOTA,mascota.getId());
         db.insertarLikeMascota(contentValues);
-        db.actualizarRaiting(mascota.getId());
+        //db.actualizarRaiting(mascota.getId());
 
     }
 

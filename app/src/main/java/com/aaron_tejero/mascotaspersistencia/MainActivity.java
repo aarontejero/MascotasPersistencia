@@ -1,6 +1,8 @@
 package com.aaron_tejero.mascotaspersistencia;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private String perfilInstagram;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
         viewPager=(ViewPager) findViewById(R.id.viewPager);
         setUpViewPager();
 
+        ObtenerPerfilShared();
+        if(perfilInstagram.equals("")){
+            crearPerfilShared();
+        }
 
         if (toolbar!=null){
             setSupportActionBar(toolbar);
@@ -69,6 +76,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
+        if (id == R.id.mnuCuentaInstagram) {
+            Intent intent = new Intent(MainActivity.this, ConfigurarCuentaInstagram.class);
+            startActivity(intent);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -85,6 +97,18 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_action_dogs);
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_action_dogpark);
+    }
+
+    private void crearPerfilShared() {
+        SharedPreferences perfilInstagram = getSharedPreferences("shared", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = perfilInstagram.edit();
+        editor.putString("perfilInstagram", "atena_alana");
+        editor.commit();
+    }
+
+    private void ObtenerPerfilShared(){
+        SharedPreferences misReferencias = getSharedPreferences("shared", Context.MODE_PRIVATE);
+        perfilInstagram = misReferencias.getString("perfilInstagram", "");
     }
 
 }

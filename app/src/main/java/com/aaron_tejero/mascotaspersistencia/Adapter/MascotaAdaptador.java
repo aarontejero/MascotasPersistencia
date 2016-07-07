@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import com.aaron_tejero.mascotaspersistencia.db.ConstructorMascotas;
 import com.aaron_tejero.mascotaspersistencia.pojo.Mascota;
 import com.aaron_tejero.mascotaspersistencia.R;
+import com.squareup.picasso.Picasso;
 
 /**
  * Created by AaronTejero on 15/05/2016.
@@ -25,16 +26,18 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
 
     public static class MascotaViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView nombre;
+
         private TextView raiting;
+        private TextView nombreCompleto;
         private ImageView foto;
         private ImageView hueso;
             public MascotaViewHolder(View v){
                 super (v);
                 foto=(ImageView) v.findViewById(R.id.imgFoto);
-                nombre=(TextView) v.findViewById(R.id.tvNombrePerro);
+
                 raiting=(TextView) v.findViewById(R.id.tvraiting);
-                hueso=(ImageView) v.findViewById(R.id.imgHuesoblanco);
+                nombreCompleto=(TextView) v.findViewById(R.id.tvnombrecompleto);
+
             }
         }
 
@@ -52,22 +55,17 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
 
     @Override
     public void onBindViewHolder(MascotaViewHolder viewHolder,final int i) {
-        viewHolder.foto.setImageResource(mascotas.get(i).getFoto());
-        viewHolder.nombre.setText(mascotas.get(i).getNombre());
+        //viewHolder.foto.setImageResource(mascotas.get(i).getFoto());
+
+        Picasso.with(activity)
+                .load(mascotas.get(i).getUrlFoto())
+                .placeholder(R.drawable.perro1)
+                .into(viewHolder.foto);
+
         viewHolder.raiting.setText(String.valueOf(mascotas.get(i).getRaiting()));
+        viewHolder.nombreCompleto.setText(String.valueOf(mascotas.get(i).getNombreCompleto()));
+        //viewHolder.hueso.setTag(viewHolder);
 
-        viewHolder.hueso.setTag(viewHolder);
-        viewHolder.hueso.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MascotaViewHolder like = (MascotaViewHolder) v.getTag();
-                like.raiting.setText(String.valueOf(1 + Integer.parseInt(like.raiting.getText().toString())));
-
-                ConstructorMascotas constructorMascotas=new ConstructorMascotas(activity);
-                constructorMascotas.darLikeMascota(mascotas.get(i));
-
-            }
-        });
     }
 
 

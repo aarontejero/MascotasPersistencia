@@ -20,6 +20,14 @@
             android:padding="16dp"
             >
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvnombrecompleto"
+                android:text="Nombre Completo: "
+                android:textSize="25dp"
+                />
+
             <ImageView
                 android:id="@+id/imgFoto"
                 android:layout_width="match_parent"
@@ -30,25 +38,15 @@
                 />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="45dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_gravity="right"
                 >
 
-                <ImageView
-                    android:id="@+id/imgHuesoblanco"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/dog_bone_48_blanco"
-                    android:scaleType="centerCrop"/>
 
-                <TextView
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvNombrePerro"
-                    android:text="Nombre"
-                    android:textSize="25dp"
-                    android:layout_marginLeft="16dp"/>
+
+
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -60,8 +58,8 @@
 
                 <ImageView
                     android:id="@+id/imgHuesoAmarillo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:src="@drawable/dog_bone_48"
                     android:scaleType="centerCrop"/>
 

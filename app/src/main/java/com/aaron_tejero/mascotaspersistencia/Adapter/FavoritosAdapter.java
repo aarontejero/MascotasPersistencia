@@ -31,9 +31,9 @@ public class FavoritosAdapter extends RecyclerView.Adapter<FavoritosAdapter.Masc
         public MascotaViewHolder(View v) {
             super(v);
             foto=(ImageView) v.findViewById(R.id.imgFoto);
-            nombre=(TextView) v.findViewById(R.id.tvNombrePerro);
+           // nombre=(TextView) v.findViewById(R.id.tvNombrePerro);
             raiting=(TextView) v.findViewById(R.id.tvraiting);
-            hueso=(ImageView) v.findViewById(R.id.imgHuesoblanco);
+           // hueso=(ImageView) v.findViewById(R.id.imgHuesoblanco);
         }
     }
 
@@ -52,8 +52,8 @@ public class FavoritosAdapter extends RecyclerView.Adapter<FavoritosAdapter.Masc
 
     @Override
     public void onBindViewHolder(MascotaViewHolder viewHolder, int i) {
-        viewHolder.foto.setImageResource(mascotas.get(i).getFoto());
-        viewHolder.nombre.setText(mascotas.get(i).getNombre());
+        //viewHolder.foto.setImageResource(mascotas.get(i).getFoto());
+        viewHolder.nombre.setText(mascotas.get(i).getNombreCompleto());
         viewHolder.raiting.setText(String.valueOf(mascotas.get(i).getRaiting()));
         viewHolder.hueso.setTag(viewHolder);
 

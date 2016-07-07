@@ -17,4 +17,10 @@
         android:orderInCategory="101"
         app:showAsAction="never"
         />
+    <item
+        android:id="@+id/mnuCuentaInstagram"
+        android:title="Configurar Cuenta"
+        android:orderInCategory="102"
+        app:showAsAction="never"
+        />
 /</menu>
